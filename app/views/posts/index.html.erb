@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<section class="container">
+
+<h1>Recent Listings </h1>
+
+<%= link_to 'New Listing', new_post_path %>
+<br>
+<br>
+<br>
+<section class='container'>
+<div class="row">
+  <div class="col-sm-6">          
+<% @posts.each do |post| %>
+
+      <div class="card">
+        <div class="card-body">
+
+        <p class="card-text"> <h5>Title: <%= post.title %></p></h5>
+        <p class="card-text"> <h5>Details: <%= post.details %></p></h5>
+        <p class="card-text"> <h5>Location: <%= post.location %></p></h5>
+        <p class="card-text"> <h5>Postdate: <%= post.post_date.strftime"%m/%d/%Y at %I:%M%p" %></p></h5>
+        
+        <center class='btn'>
+      <%= link_to 'Edit Listing', edit_post_path(post) %></center>
+        <center class='btn'>
+
+        <td><%= link_to '  Delete  ', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%# <a href="" class="btn btn-primary">Go somewhere</a> %>
+</center>
+      </div>
+    </div>            
+  <% end %>
+
+  </div>
+
+<% @users.each do |user| %>
+  <% user.posts.each do |post| %>
+    <%= post.title %>
+    <%= post.details %>
+    
+  <% end %>
+<% end %>
+<br>
+</section>
+</section>

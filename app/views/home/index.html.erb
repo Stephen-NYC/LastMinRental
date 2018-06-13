@@ -1,0 +1,45 @@
+<div class="bkgrdImg">
+<div class="overlay">
+
+
+ <% if signed_in? %>
+      Signed in as: <%= current_user.email %>
+      <%= button_to 'Sign out', sign_out_path, method: :delete %>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+  <h2 class='container'>Thank you for Signing in. Heres a little about us.. Our goal is to unite the music scene here in New York City. This site is for local musicians who need a last minute rentals for Instruments, DJ, Light and Sound equipment. </h2>
+
+
+    <% else %>
+      <%= render partial: '/sessions/form' %>
+
+    <% end %>
+
+    <div id="flash">
+      <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
+  <br>
+    <br>
+      <br>
+        <br>
+        

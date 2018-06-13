@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+<section class="container">
+<strong class='container'>
+<h1>Gear/Equipment </h1>
+<h3>List your Gear/Equipment you would like to rent out!</h3>
+</strong>
+
+<%= link_to 'Add New Gear to Public', new_gear_path %>
+<br>
+<br>
+<br>
+<section class='container'>
+<div class="row">
+  <div class="col-sm-5">        
+  <% @gears.each do |gear| %>
+      
+      <div class="card">
+        <div class="card-body">
+
+        <p class="card-text"> <h5>Item Name: <%= gear.item_name %></p></h5>
+        <p class="card-text"> <h5>Brand: <%= gear.brand %></p></h5>
+        <p class="card-text"> <h5>Category: <%= gear.category %></p></h5>
+        <% @users.each do |user|%>
+            <td><%= user.username %> </td>
+            <% end %>
+
+        <center class='btn'>
+      <%= link_to 'Edit Equipment', edit_gear_path(gear) %>
+      </center>
+              <center class='btn'>
+      <td><%= link_to '  Delete  ', gear, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </center>
+        <%# <a href="" class="btn btn-primary">Go somewhere</a> %>
+
+      </div>
+    </div>            
+  <% end %>
+
+  </div>
+</section>
+</section>
+
+<br>
+
+

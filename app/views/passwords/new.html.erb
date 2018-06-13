@@ -1,0 +1,27 @@
+<div class="bkgrdImg">
+<div class="overlay">
+
+  <div id="clearance" class="password-reset">
+    <div class="text-center mb-4">
+      <%= image_tag 'chapterlogo-white.svg', class: 'logoPic' %>
+    </div>
+    <div class="d-flex justify-content-center text-center">
+    <div class="col-4">
+      <h2><%= t(".title") %>!</h2>
+      <br>
+      <p><%= t(".description") %></p>
+      <%= form_for :password, url: passwords_path do |form| %>
+        <div class="text-field">
+          <%= form.label :email, class:"sr-only" %>
+          <%= form.text_field :email, type: 'email', class:"form-control", placeholder:"Email Address", :required => true %>
+        </div>
+        <br>
+        <div class="submit-field">
+          <%= form.submit 'Reset Password', :class => "button" %>
+        </div>
+      <% end %>
+        </div>
+    <div>
+  <div>
+</div>
+</div>

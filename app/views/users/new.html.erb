@@ -1,0 +1,27 @@
+<div class="bkgrdImg">
+<div class="overlay">
+
+  <div id="clearance" class="sign-up">
+
+    <div class="text-center mb-4">
+      <%= image_tag '', class: 'logoPic' %>
+    </div>
+
+    <div class="d-flex justify-content-center text-center">
+    <div class="col-4">
+      <%= form_for @user do |form| %>
+        <%= render partial: '/users/form', object: form %>
+        <div class="submit-field">
+          <%= form.submit 'Sign Up', class: "button" %>
+        </div>
+        <br>
+        <div class="other-links">
+          <%= link_to t("Sign In"), sign_in_path %>
+        </div>
+        <% end %>
+       </div>
+     </div>
+    </div>
+  </div>
+</div>
+</div>

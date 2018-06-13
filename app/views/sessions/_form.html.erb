@@ -1,0 +1,39 @@
+<%= form_for :session, url: session_path, class: "form-signin" do |form| %>
+<br>
+  <br>
+    <br>
+      <br>
+        <br>
+          <br><br>
+  <br>
+    <br>
+      <br>
+        <br>
+          <br>
+<div class="d-flex justify-content-center text-center">
+  <div class="col-4">
+    <h2 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
+      <div class="form-label-group">
+        <%= form.label :email, class:"sr-only" %>
+        <%= form.email_field :email, type: 'email', class:"form-control", placeholder:"Email Address", :required => true, autofocus: true %>
+      </div>
+      <div class="password-field">
+        <%= form.label :password, class:"sr-only"  %>
+        <%= form.password_field :password, type: 'password', class:"form-control", placeholder:"Password", :required => true %>
+      </div>
+      <br>
+      <div class="submit-field">
+        <%= form.submit class: "button" %>
+      </div>
+      <br>
+      <strong class='signup'>
+      <div class="other-links">
+        <% if Clearance.configuration.allow_sign_up? %>
+          <%= link_to t("Sign Up"), sign_up_path %> |
+        <% end %>
+        <%= link_to t("Forgot Password"), new_password_path %>
+      </div>
+      </strong>
+    <% end %>
+  </div>
+</div>

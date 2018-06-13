@@ -1,0 +1,35 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1>Search</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col"><%= sort_link(@q, :title) %></th>
+      <th scope="col"><%= sort_link(@q, :details) %></th>
+      <th scope="col"><%= sort_link(@q, :location) %></th>
+      <th scope="col"><%= sort_link(@q, :post_date) %></th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+      <td><%= post.title %></td>
+      <td><%= post.details %></td>
+      <td><%= post.location %></td>
+      <td><%= post.post_date.strftime"%m/%d/%Y at %I:%M%p" %></td>
+
+      <td><% unless current_user.posts.include?(post) %>
+
+
+    <% end %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
